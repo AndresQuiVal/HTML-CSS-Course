@@ -1,3 +1,5 @@
+@import "styles2.css";
+
 ul div li {
 	font-weight: bold;
 	color: white;
@@ -36,6 +38,24 @@ ul, li {
 	display: inline;
 }
 
+
+@keyframes size-effect-changer {
+	from { 
+		box-shadow: 0px 3px 10px black;
+		height: 270px;
+		width: 200px;
+		margin: 0px 25px;
+		font-size: 1em;
+	}
+	to { 
+		box-shadow: 0px 5px 20px black; 
+		height: 290px;
+		width: 230px;
+		margin: 0px 15px;
+		font-size: 1.2em;
+	}
+}
+
 .base-card {
 	border-radius: 15px 0px 0px 15px;
 	height: 230px;
@@ -47,24 +67,56 @@ ul, li {
 	text-align: center;
 }
 
+.base-card2:hover::after {
+	border-radius: 1000px;
+}
+
+.base-card2:hover {
+	animation: size-effect-changer .5s;
+	animation-fill-mode: forwards;
+}
+
+.base-card2 {
+	border-radius: 15px;
+	width: 200px;
+	height: 270px;
+	display: inline-flex;
+	margin: 0px 25px;
+	max-height: 15%;
+	box-shadow: 0px 3px 10px black;
+	padding: 10px;
+	color: white;
+	text-align: center;
+}
+
+/*.flex-container {
+	display: flex; 
+	align-items: center;/* vertical align from every item in the flex container based on either the top, bottom or center vertical axis of the children  
+	flex-wrap: wrap;
+	justify-content: center; /* horizontal align 
+	align-content: flex-start; /* vertical align of all the content in the container itself 
+} */
+
+
+.flex-container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center; 
+	align-content: flex-start;
+	white-space: 10px;
+}
+
 .card1 {
 	background-color: skyblue;
-	width: 90px;
-	margin: 10px -15px 0px 0px;
 }
 
 .card2 {
 	background-color: deepskyblue;
-	width: 110px;
-	height: 250px;
-	margin: 10px -15px 0px 0px;
 }
 
 .card3 {
 	background-color: royalblue;
-	width: 250px;
-	height: 270px;
-	border-radius: 15px;
 }
 
 .image-desc {
@@ -74,7 +126,7 @@ ul, li {
 	margin: 0px 100px 0px 100px;
 }
 
-img[src^="cs"]{
+img::float {
 	background-color: black;
 }
 
